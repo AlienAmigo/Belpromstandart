@@ -4,28 +4,15 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(name='description', content='')
-    link(rel='stylesheet', href='css/some.css')
+    link(rel='stylesheet', href='css/style.css')
     title Belpromstandart | Sign Up
   body
     .signup-box
-      h1.title Sign Up
-    script(src='js/script.js')
-//- extends ../pug/layout.pug
+      .title
+        h1.title__text Sign Up
+      .form-wrap
+          h2.signup-form__title New User?
+          p.sign-up__subtitle Use the form below to create your account.
+          form.signup-form
 
-//- block meta
-//-   title Главная
-//-   
-
-//- //- block append head
-//- //-   
-
-//- block header
-//-   p Лого
-
-//- block content
-//-   h1 Заголовок
-
-//- //- block footer
-//- //-   p footer
-
-//- //- block append page-bottom
+    script(src='js/script.min.js')

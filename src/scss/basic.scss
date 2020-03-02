@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #4e4e4e;
+  font-family: $font-family;
+}
+
+.signup-box {
+  display: flex;
+  position: absolute;
+  width: 665px;
+  height: 481px;
+  background-color: #fff;
+}
+.title {
+  position: relative;
+  background-color: $main-color;
+  width: 137px;
+  height: 100%;
+
+  &__text {
+    display: block;
+    position: absolute;
+    height: 63px;
+    width: 170px;
+    left: 10.3%;
+    top: calc(50% - 63px/2 + 249.5px);
+    @include ff-PTSans;
+    font-size: 49px;
+    line-height: 63px;
+    letter-spacing: 0.5px;
+    color: #FFFFFF;
+    transform: rotate(-90deg);
+  }
+}
+
+.form-wrap {
+  width: 100%;
+  height: 100%;
+  padding: 38px 22px 32px 20px;
+  background-image: url(../img/noun_925550.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}

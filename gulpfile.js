@@ -20,7 +20,6 @@ const pug = require('gulp-pug');
 const prettyHtml = require('gulp-pretty-html');
 const replace = require('gulp-replace');
 
-
 function deploy(cb) {
   ghPages.publish(path.join(process.cwd(), './build'), cb);
 }
@@ -59,7 +58,7 @@ function compileStyles() {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer({browserslist: ['last 2 version']}),
+      autoprefixer({overrideBrowserslist: ['last 2 version']}),
     ]))
     .pipe(sourcemaps.write('/'))
     .pipe(dest(dir.build + 'css/'))
