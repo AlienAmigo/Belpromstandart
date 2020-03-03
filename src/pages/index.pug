@@ -18,7 +18,7 @@ html(lang="en")
             .signup-form__group
               .signup-form__input-wrap
                 label.signup-form__label(for="firstname") First Name
-                input.signup-form__input(type="text", name="firstname")
+                input.signup-form__input(type="text", name="firstname", pattern="[А-Яа-яЁёA-Za-z\w]+", placeholder=" ", title="Enter first name", required)
               .signup-form__input-wrap
                 label.signup-form__label(for="lastname") Last Name
                 input.signup-form__input(type="text", name="lastname")
@@ -31,7 +31,7 @@ html(lang="en")
                   option.signup-form__sel-option(value="4") Russian
               .signup-form__input-wrap
                 label.signup-form__label(for="email") E-mail
-                input.signup-form__input(type="email", name="email", placeholder=" ", required)
+                input.signup-form__input(type="email", name="email", placeholder=" ", pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$", required)
               .signup-form__input-wrap
                 label.signup-form__label(for="dateofbirth") Date of Birth
                 input.signup-form__input(type="text", name="dateofbirth")
@@ -40,10 +40,10 @@ html(lang="en")
                 input.signup-form__input(type="text", name="nationality")
               .signup-form__input-wrap
                 label.signup-form__label(for="password") Password
-                input.signup-form__input(type="password", name="password")
+                input.signup-form__input(type="password", name="password", pattern=".{8,}", placeholder=" ", required)
               .signup-form__input-wrap
                 label.signup-form__label(for="password-confirm") Password Confirm
-                input.signup-form__input(type="password", name="password-confirm")
+                input.signup-form__input(type="password", name="password-confirm", pattern=".{8,}", placeholder=" ", required)
             .signup-form__submit-wrap
               p.signup-form__login Have an account? #[a(href="#", role="button") Login]
               input.signup-form__submit(type="submit", value="Complete Signup")

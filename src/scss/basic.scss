@@ -92,27 +92,27 @@ body {
   &__input-wrap {
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 235px;
     margin-top: 15px;
+  }
+
+  &__label {
+    display: block;
+    position: relative;
+    @include ff-WorkSans-Light();
+    font-size: 12px;
+    color: $gray-light;
     &:before {
       content: '';
       display: none;
       position: absolute;
-      bottom: 10px;
+      bottom: -10px;
       right: 0;
       width: 11px;
       height: 8px;
       background-image: url(../img/Shape.svg);
       background-repeat: no-repeat;
     }
-  }
-
-  &__label {
-    display: block;
-    @include ff-WorkSans-Light();
-    font-size: 12px;
-    color: $gray-light;
   }
 
   &__input {
@@ -124,13 +124,11 @@ body {
     font-size: $font-size;
     @include ff-WorkSans-Regular;
 
-    &:valid:not(:placeholder-shown) ~ .signup-input__wrap {
-      
-      &:before {
+    &:valid:not(:placeholder-shown) + .signup-form__label:before  {
+     
         display: block;
         // color: $text-color;
         // border-bottom: 1px solid $gray-form;
-      }
     }
 
     &:invalid:not(:placeholder-shown) {
