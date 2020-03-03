@@ -7,12 +7,46 @@ html(lang="en")
     link(rel='stylesheet', href='css/style.css')
     title Belpromstandart | Sign Up
   body
-    .signup-box
-      .title
-        h1.title__text Sign Up
-      .form-wrap
-          h2.signup-form__title New User?
-          p.sign-up__subtitle Use the form below to create your account.
-          form.signup-form
+    .wrap
+      .signup-box
+        .head
+          h1.head__text Sign Up
+        .form-wrap
+          h2.title New User?
+          p.subtitle Use the form below to create your account.
+          form.signup-form(method="POST", action="", id="signup-form", required)
+            .signup-form__group
+              .signup-form__input-wrap
+                label.signup-form__label(for="firstname") First Name
+                input.signup-form__input(type="text", name="firstname")
+              .signup-form__input-wrap
+                label.signup-form__label(for="lastname") Last Name
+                input.signup-form__input(type="text", name="lastname")
+              .signup-form__input-wrap
+                label.signup-form__label(for="nationality") Nationality
+                select.signup-form__sel-nation(name="nationality")
+                  option.signup-form__sel-option(value="1", selected) American
+                  option.signup-form__sel-option(value="2") German
+                  option.signup-form__sel-option(value="3") French
+                  option.signup-form__sel-option(value="4") Russian
+              .signup-form__input-wrap
+                label.signup-form__label(for="email") E-mail
+                input.signup-form__input(type="email", name="email", placeholder=" ", required)
+              .signup-form__input-wrap
+                label.signup-form__label(for="dateofbirth") Date of Birth
+                input.signup-form__input(type="text", name="dateofbirth")
+              .signup-form__input-wrap
+                label.signup-form__label(for="gender") Gender
+                input.signup-form__input(type="text", name="nationality")
+              .signup-form__input-wrap
+                label.signup-form__label(for="password") Password
+                input.signup-form__input(type="password", name="password")
+              .signup-form__input-wrap
+                label.signup-form__label(for="password-confirm") Password Confirm
+                input.signup-form__input(type="password", name="password-confirm")
+            .signup-form__submit-wrap
+              p.signup-form__login Have an account? #[a(href="#", role="button") Login]
+              input.signup-form__submit(type="submit", value="Complete Signup")
+
 
     script(src='js/script.min.js')

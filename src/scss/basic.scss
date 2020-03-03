@@ -5,8 +5,20 @@
 }
 
 body {
-  background-color: #4e4e4e;
   font-family: $font-family;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #4e4e4e;
 }
 
 .signup-box {
@@ -15,34 +27,172 @@ body {
   width: 665px;
   height: 481px;
   background-color: #fff;
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, .15);
+
 }
-.title {
+.head {
   position: relative;
   background-color: $main-color;
   width: 137px;
   height: 100%;
 
   &__text {
-    display: block;
     position: absolute;
-    height: 63px;
-    width: 170px;
-    left: 10.3%;
-    top: calc(50% - 63px/2 + 249.5px);
+    bottom: 22px;
+    right: 6px;
     @include ff-PTSans;
     font-size: 49px;
-    line-height: 63px;
-    letter-spacing: 0.5px;
     color: #FFFFFF;
-    transform: rotate(-90deg);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
   }
 }
 
 .form-wrap {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
   padding: 38px 22px 32px 20px;
   background-image: url(../img/noun_925550.svg);
   background-repeat: no-repeat;
   background-position: right bottom;
+}
+
+.title {
+  @include ff-WorkSans-Medium;
+  font-size: 22px;
+  color: $text-color;
+}
+
+.subtitle {
+  @include ff-WorkSans-Light;
+  font-size: $font-size;
+  color: $text-color;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 5;
+
+  &__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: $text-color;
+  }
+
+  &__input-wrap {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 235px;
+    margin-top: 15px;
+    &:before {
+      content: '';
+      display: none;
+      position: absolute;
+      bottom: 10px;
+      right: 0;
+      width: 11px;
+      height: 8px;
+      background-image: url(../img/Shape.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__label {
+    display: block;
+    @include ff-WorkSans-Light();
+    font-size: 12px;
+    color: $gray-light;
+  }
+
+  &__input {
+    border: 0;
+    border-bottom: 1px solid $gray-form;
+    outline: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: $text-color;
+    font-size: $font-size;
+    @include ff-WorkSans-Regular;
+
+    &:valid:not(:placeholder-shown) ~ .signup-input__wrap {
+      
+      &:before {
+        display: block;
+        // color: $text-color;
+        // border-bottom: 1px solid $gray-form;
+      }
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      color: $warning-color;
+      border-bottom: 2px solid $warning-color;
+    }
+  }
+  
+  & select {
+    border: 0;
+    border-bottom: 1px solid $gray-form;
+    outline: 0;
+    background-color: rgba(255, 255, 255, 0);
+    color: $text-color;
+    font-size: $font-size;
+    @include ff-WorkSans-Regular;
+
+    & option {
+      border: 0;
+      border-bottom: 1px solid $gray-form;
+      outline: 0;
+      background-color: rgba(255, 255, 255, 0);
+      color: $text-color;
+      font-size: $font-size;
+      @include ff-WorkSans-Regular;
+    }
+  }
+
+  &__submit-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-grow: 5;
+    align-items: flex-end;
+  }
+
+  &__login {
+    @include ff-WorkSans-Light;
+    color: #000;
+    font-size: 13px;
+
+    a {
+      @include ff-WorkSans-Medium;
+      color: $main-color;
+      text-decoration: underline;
+
+      &:hover {
+        color: $gray-light;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__submit {
+    display: block;
+    padding: 7px 25px;
+    background-color: $main-color;
+    border: none;
+    outline: 0;
+    @include ff-PTSans;
+    font-size: $font-size;
+    color: #fff;
+    cursor: pointer;
+  }
 }
